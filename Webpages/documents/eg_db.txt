@@ -1,0 +1,16 @@
+
+create database student_schema;
+use student_schema;
+insert into student_info(name,roll_no,standard) values('ram',21400,12),('shyam',21401,13),('ramdas',21403,14);
+insert into student_info(name,roll_no,standard) values('tanisha',21405,15),('mahesh',21404,15),('himansh',21402,15);
+alter table student_info add PRIMARY KEY(roll_no);
+
+
+create table vocation_info( roll_no int(5), lab_name varchar(20), teacher varchar(15), foreign key (roll_no) references student_info(roll_no));
+insert into vocation_info(roll_no,lab_name,teacher) values(21400,"DBSL","R.V.Sarang"),(21401,"MPL","G.V.Gavande");
+describe vocation_info;
+describe student_info;
+
+
+
+
